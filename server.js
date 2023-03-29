@@ -11,10 +11,12 @@ app.use(express.json());
 app.use(cors());
 
 const { getAccount, addAccount, login } = require("./controllers/user");
+const { createPost } = require("./controllers/post");
 
 app.get("/allusers", getAccount);
 app.post("/adduser", addAccount);
 app.post("/login", login);
+app.post("/createPost", createPost);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
